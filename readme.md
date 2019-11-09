@@ -20,7 +20,7 @@ $ npm test
 $ npm publish
 ```
 
-![runway graphic with tfjs runway logo](runway.png)
+<img src="./runway.png" width=300/>
 
 # License
 
