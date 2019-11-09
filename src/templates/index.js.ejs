@@ -1,0 +1,52 @@
+import * as nsfwjs from 'nsfwjs';
+
+const Index = () => {
+  const jsModel = JSON.parse(\"
+$(cat jsModel.txt | sed -e 's/\"/\\\"/g')
+  <%=   %>
+  \")
+  const weightDataString = jsModel.weightData;
+  
+  const buf = Buffer.from(weightDataString, 'base64');
+  const weightDataArrayBuffer = buf.buffer.slice(
+    buf.byteOffset,
+    buf.byteOffset + buf.byteLength
+  );
+
+  const modelArtefacts = {
+    ...jsModel,
+    weightData: weightDataArrayBuffer,
+  };
+  console.log({modelArtefacts})
+
+  const ioHandler = {
+    load: () => (new Promise((resolve, reject) => {
+      try {
+        resolve(modelArtefacts)
+      } catch (e) {
+        reject(e)
+      }
+    }))
+  };
+  console.log(ioHandler)
+
+  const options = {size: 299};
+  nsfwjs.load(ioHandler, options).then(model => {
+    const img = new Image()
+    img.crossOrigin = 'anonymous'
+    img.onload = function () { 
+      model.classify(img).then(predictions => {
+        console.log('Predictions', predictions);
+      });
+    }
+    img.src = 'https://i.imgur.com/Kwxetau.jpg'
+  });
+
+  return (
+    <div>
+      <p>Hello Next.js</p>
+    </div>
+  );
+};
+
+export default Index;
