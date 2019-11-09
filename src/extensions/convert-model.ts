@@ -27,7 +27,7 @@ const loadAll = weightsFilePaths => {
 }
 
 export const convertModel = modelPath => {
-  const modelConfigFile = fs.readFileSync('${modelPath}/model.json')
+  const modelConfigFile = fs.readFileSync(`${modelPath}/model.json`)
   const modelConfig = JSON.parse(modelConfigFile)
   const modelTopology = modelConfig['modelTopology']
   const weightsManifest = modelConfig['weightsManifest']
