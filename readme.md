@@ -2,7 +2,7 @@
 
 # TFJS Runway
 
-A tool for packaging TensorFlow JS models with JS wesites.
+A tool for packaging TensorFlow JS models for the web.
 
 <img src="./runway.png" width=300/>
 
