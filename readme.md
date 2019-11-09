@@ -1,3 +1,4 @@
+![runway graphic header with tfjs runway logo](runway-header.png)
 # tfjs-runway CLI
 
 A CLI for tfjs-runway.
@@ -18,6 +19,8 @@ $ npm test
 (if typescript, run `npm run build` here)
 $ npm publish
 ```
+
+![runway graphic with tfjs runway logo](runway.png)
 
 # License
 
