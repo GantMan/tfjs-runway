@@ -1,21 +1,24 @@
 import { GluegunCommand } from 'gluegun'
-import { readFileSync } from 'fs'
+import * as fs from 'fs'
 
 const command: GluegunCommand = {
   name: 'tfjs-runway',
   run: async toolbox => {
     const modelPath = toolbox.parameters.first
+    const appPath = toolbox.parameters.second
 
-    let modelArtifacts = readFileSync('./model-artifacts.json')
-    let modelArtifactsString = modelArtifacts.toString()
-    modelArtifactsString.replace('\"', '\\\"')
-    toolbox.convertModel()
+    toolbox.convertModel(modelPath)
 
-    await toolbox.template.generate({
-      template: 'index.ejs',
-      target: `index.js`,
-      props: { modelPath }
-    })
+    let artifactData = fs.readFileSync('./model-artifacts.json')
+    let artifactsString = artifactData.toString().replace('"', '\\"')
+
+    let data = fs.readFileSync(appPath)
+    let fd = fs.openSync(appPath, 'w+')
+    let buffer = new Buffer(artifactsString)
+
+    fs.writeSync(fd, buffer, 0, buffer.length, 0)
+    fs.writeSync(fd, data, 0, data.length, buffer.length)
+    fs.closeSync(fd)
   }
 }
 

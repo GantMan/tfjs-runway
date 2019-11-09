@@ -26,8 +26,8 @@ const loadAll = weightsFilePaths => {
   return shardBuffers
 }
 
-export const convertModel = () => {
-  const modelConfigFile = fs.readFileSync('./model/model.json')
+export const convertModel = modelPath => {
+  const modelConfigFile = fs.readFileSync('${modelPath}/model.json')
   const modelConfig = JSON.parse(modelConfigFile)
   const modelTopology = modelConfig['modelTopology']
   const weightsManifest = modelConfig['weightsManifest']
@@ -62,9 +62,9 @@ export const convertModel = () => {
     weightSpecs: weightSpecs,
     weightData: weightDataString64
   }
-  const modelArtifactsBase64 = JSON.stringify(modelArtifacts)
+  const modelArtifactsJSON = JSON.stringify(modelArtifacts)
 
-  fs.writeFile('model-artifacts.json', modelArtifactsBase64, err => {
+  fs.writeFile('model-artifacts.json', modelArtifactsJSON, err => {
     console.error(err)
   })
 }
