@@ -1,7 +1,7 @@
 ![runway graphic header with tfjs runway logo](runway-header.png)
 # tfjs-runway CLI
 
-A CLI for packaging TensorFlow JS models with JS wesites.
+A tool for packaging TensorFlow JS models with JS wesites.
 
 <img src="./runway.png" width=300/>
 
