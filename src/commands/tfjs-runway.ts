@@ -12,7 +12,7 @@ const command: GluegunCommand = {
 
     let artifactData = fs.read('./model-artifacts.json')
     let artifactsString = artifactData.toString().replace('"', '\\"')
-    const artifactImport = `const modelArtifacts = JSON.parse(${artifactsString})`
+    const artifactImport = `const modelArtifactsJSON = JSON.parse(${artifactsString})`
 
     let data = fs.read(templatePath)
     fs.write(output, '')
