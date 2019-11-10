@@ -22,7 +22,7 @@ the demo directory (with TFJS Runway installed):
 
 `tfjs-runway ./_nsfwjs_model ./template.js`
 
-Then just open `./index.html` and open the dev console to see the predictions!
+Then just open `./index.html` and open the [dev console](https://developers.google.com/web/tools/chrome-devtools/open) to see the predictions!
 
 This will convert the all the information about the model to a string,
 and it will make that string available in your code as `modelArtifactsJSON`. The first argument is
