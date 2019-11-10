@@ -11,7 +11,7 @@ const command: GluegunCommand = {
     runway.convertModel(modelPath)
 
     let artifactData = fs.read('./model-artifacts.json')
-    let artifactsString = artifactData.toString().replace(/\"/g, '\\"')
+    let artifactsString = artifactData.toString().replace(/\"/g, '\\\"')
     const artifactImport = `const modelArtifactsJSON = JSON.parse("${artifactsString}")\r\n`
 
     let data = fs.read(templatePath)
