@@ -6,7 +6,13 @@ A tool for packaging TensorFlow JS models for the web.
 
 ### Installation
 
+Install from npm
+
 `npm i -g tfjs-runway`
+
+or
+
+`yarn global add tfjs-runway`
 
 ### Usage
 
