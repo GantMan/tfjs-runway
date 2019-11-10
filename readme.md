@@ -4,6 +4,10 @@
 
 A tool for packaging TensorFlow JS models for the web.
 
+Deploy your models fast!
+
+<img src="./mugatu.gif" width=300>
+
 ### Installation
 
 Install from npm
