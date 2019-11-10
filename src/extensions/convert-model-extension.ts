@@ -21,7 +21,7 @@ const loadAll = (weightsFilePaths, toolbox) => {
   for (let i = 0; i < weightsFilePaths.length; i++) {
     const f = weightsFilePaths[i]
 
-    const g = fs.read(f)
+    const g = fs.read(f, 'buffer')
 
     shardBuffers.push(g)
   }
