@@ -18,14 +18,6 @@ or
 
 `yarn global add tfjs-runway`
 
-_Note: Not published to npm yet. For now, clone the repo and link it_
-
-```
-cd tfjs-runway
-npm link tfjs-runway
-cd demo npm link
-```
-
 ### Usage
 
 **tfjs-runway \<model path\> \<inject path\>**
