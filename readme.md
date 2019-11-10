@@ -36,7 +36,7 @@ Check out the included demo app for further instructions.
 
 <img src="./runway.png" width=300/>
 
-_Find Morgan and she'll give you one of these stickers!_
+_Find [Morgan](https://twitter.com/morgancodes) and she'll give you one of these stickers!_
 
 # License
 
